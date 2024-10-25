@@ -1,0 +1,49 @@
+# Archivos específicos de IntelliJ
+.idea/
+*.iml
+*.iws
+out/
+
+# Archivos específicos de Eclipse
+.project
+.classpath
+.settings/
+
+# Archivos de compilación
+/target/
+
+# Archivos de log
+*.log
+
+# Configuración de entorno
+.env
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de dependencia y construcción de Maven
+.mvn/
+!**/mvn/wrapper/**
+
+
+# Archivos de configuración de IntelliJ que puedan cambiar entre entornos
+*.ipr
+/.idea/libraries/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+
+# Configuración de base de datos
+db/
+
+# Archivos sensibles o privados
+application.properties
+application.yml
+
+# Archivos de cobertura de código y reportes
+/coverage/
+jacoco*.exec
+*.ec
+/target/site/jacoco/
