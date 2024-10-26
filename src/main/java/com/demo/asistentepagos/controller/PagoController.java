@@ -26,6 +26,7 @@ public class PagoController {
     }
 
     @GetMapping("/{id}")
+    @RequestMapping("/{id}")
     public ResponseEntity<Pago> obtenerPagoPorId(@PathVariable Long id) {
         return ResponseEntity.of(pagoService.obtenerPagoPorId(id));
     }
@@ -41,5 +42,5 @@ public class PagoController {
         return ResponseEntity.noContent().build();
     }
 
-    
+
 }

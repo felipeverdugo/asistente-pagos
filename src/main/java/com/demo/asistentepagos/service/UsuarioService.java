@@ -17,6 +17,12 @@ public class UsuarioService {
 
     // Crear un nuevo usuario
     public Usuario crearUsuario(Usuario usuario) {
+
+        Optional<Usuario> existingUser = usuarioRepository.findByEmail(usuario.getEmail());
+
+        if (existingUser.isPresent()) {
+            throw new RuntimeException("Ya existe un usuario con ese mail");
+        }
         return usuarioRepository.save(usuario);
     }
 
@@ -41,29 +47,28 @@ public class UsuarioService {
         usuarioRepository.deleteById(id);
     }
 
-
-    public void obtenerUsuarioPorEmail(String email) {
-        usuarioRepository.findByEmail(email);
+    public Optional<Usuario> obtenerUsuarioPorEmail(String email) {
+        return usuarioRepository.findByEmail(email);
     }
 
-    public void obtenerUsuarioPorNombre(String nombre) {
-        usuarioRepository.findByNombre(nombre);
+    public List<Usuario> obtenerUsuariosPorTelefono(int telefono) {
+        return usuarioRepository.findByTelefono(telefono);
     }
 
-    public void obtenerUsuarioPorTelefono(int telefono) {
-        usuarioRepository.findByTelefono(telefono);
+    public List<Usuario> obtenerUsuariosPorNombre(String nombre) {
+        return usuarioRepository.findByNombre(nombre);
     }
 
-    public void obtenerUsuarioPorDireccion(String direccion) {
-        usuarioRepository.findByDireccion(direccion);
+    public List<Usuario> obtenerUsuariosPorDireccion(String direccion) {
+        return usuarioRepository.findByDireccion(direccion);
     }
 
-    public void obtenerUsuarioPorFechaNacimiento(Date fechaNacimiento) {
-        usuarioRepository.findByFechaNacimiento(fechaNacimiento);
+    public List<Usuario> obtenerUsuariosPorFechaNacimiento(Date fechaNacimiento) {
+        return usuarioRepository.findByFechaNacimiento(fechaNacimiento);
     }
 
-    public void obtenerUsuarioPorNombreYTelefono(String nombre, int telefono) {
-        usuarioRepository.findByNombreAndTelefono(nombre, telefono);
+    public List<Usuario> obtenerUsuariosPorNombreYTelefono(String nombre, int telefono) {
+        return usuarioRepository.findByNombreAndTelefono(nombre, telefono);
     }
 
 

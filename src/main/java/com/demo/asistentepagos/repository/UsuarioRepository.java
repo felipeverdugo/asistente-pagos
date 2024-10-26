@@ -5,20 +5,24 @@ import com.demo.asistentepagos.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     // Métodos personalizados si son necesarios
-    void findByNombre(String nombre);
 
-    void findByEmail(String email);
 
-    void findByTelefono(int telefono);
+    Optional<Usuario> findByEmail(String email);
 
-    void findByDireccion(String direccion);
+    List<Usuario> findByNombre(String nombre);
 
-    void findByFechaNacimiento(Date fechaNacimiento);
+    List<Usuario> findByTelefono(int telefono);
 
-    void findByNombreAndTelefono(String nombre, int telefono);
+    List<Usuario> findByDireccion(String direccion);
+
+    List<Usuario> findByFechaNacimiento(Date fechaNacimiento);
+
+    List<Usuario> findByNombreAndTelefono(String nombre, int telefono);
 
 
 }
