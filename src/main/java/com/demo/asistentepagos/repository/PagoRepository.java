@@ -12,7 +12,7 @@ public interface PagoRepository extends JpaRepository<Pago, Long> {
     // Métodos personalizados si son necesarios
     List<Pago> findByMonto(Double monto);
 
-    List<Pago> findByMetodoPago(MetodoDePago metodoPago);
+    List<Pago> findByMetodoDePago(MetodoDePago metodoDePago);
 
     List<Pago> findByEmisor(Usuario emisor);
 
@@ -24,25 +24,25 @@ public interface PagoRepository extends JpaRepository<Pago, Long> {
 
     List<Pago> findByReceptorAndMonto(Usuario receptor, Double monto);
 
-    List<Pago> findByEmisorAndMetodoPago(Usuario emisor, MetodoDePago metodoPago);
+    List<Pago> findByEmisorAndMetodoDePago(Usuario emisor, MetodoDePago metodoDePago);
 
-    List<Pago> findByReceptorAndMetodoPago(Usuario receptor, MetodoDePago metodoPago);
+    List<Pago> findByReceptorAndMetodoDePago(Usuario receptor, MetodoDePago metodoDePago);
 
     List<Pago> findByEmisorAndReceptorAndMonto(Usuario emisor, Usuario receptor, Double monto);
 
-    List<Pago> findByEmisorAndReceptorAndMetodoPago(Usuario emisor, Usuario receptor, MetodoDePago metodoPago);
+    List<Pago> findByEmisorAndReceptorAndMetodoDePago(Usuario emisor, Usuario receptor, MetodoDePago metodoDePago);
 
-    List<Pago> findByEmisorAndMontoAndMetodoPago(Usuario emisor, Double monto, MetodoDePago metodoPago);
+    List<Pago> findByEmisorAndMontoAndMetodoDePago(Usuario emisor, Double monto, MetodoDePago metodoDePago);
 
-    List<Pago> findByReceptorAndMontoAndMetodoPago(Usuario receptor, Double monto, MetodoDePago metodoPago);
+    List<Pago> findByReceptorAndMontoAndMetodoDePago(Usuario receptor, Double monto, MetodoDePago metodoDePago);
 
-    List<Pago> findByEmisorAndReceptorAndMontoAndMetodoPago(Usuario emisor, Usuario receptor, Double monto, MetodoDePago metodoPago);
+    List<Pago> findByEmisorAndReceptorAndMontoAndMetodoDePago(Usuario emisor, Usuario receptor, Double monto, MetodoDePago metodoDePago);
 
-    List<Pago> findByEmisorAndReceptorAndMetodoPagoAndMonto(Usuario emisor, Usuario receptor, MetodoDePago metodoPago, Double monto);
+    List<Pago> findByEmisorAndReceptorAndMetodoDePagoAndMonto(Usuario emisor, Usuario receptor, MetodoDePago metodoDePago, Double monto);
 
-    List<Pago> findByEmisorAndMetodoPagoAndMonto(Usuario emisor, MetodoDePago metodoPago, Double monto);
+    List<Pago> findByEmisorAndMetodoDePagoAndMonto(Usuario emisor, MetodoDePago metodoDePago, Double monto);
 
-    List<Pago> findByReceptorAndMetodoPagoAndMonto(Usuario receptor, MetodoDePago metodoPago, Double monto);
+    List<Pago> findByReceptorAndMetodoDePagoAndMonto(Usuario receptor, MetodoDePago metodoDePago, Double monto);
 
 
 }

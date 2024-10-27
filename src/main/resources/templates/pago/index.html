@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <title>Página de Pagos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Lista de Pagos</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Método de Pago</th>
+        <th>Monto</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pago : ${pagos}">
+        <td th:text="${pago.id}"></td>
+        <td th:text="${pago.metodoDePago}"></td>
+        <td th:text="${pago.monto}"></td>
+    </tr>
+    <tr th:if="${#lists.isEmpty(pagos)}">
+        <td colspan="3">No hay pagos disponibles.</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

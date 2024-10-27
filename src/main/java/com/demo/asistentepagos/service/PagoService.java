@@ -60,8 +60,8 @@ public class PagoService {
         return pagoRepository.findByMonto(monto);
     }
 
-    public List<Pago> obtenerPagosPorMetodoPago(MetodoDePago metodoDePago) {
-        return pagoRepository.findByMetodoPago(metodoDePago);
+    public List<Pago> obtenerPagosPorMetodoDePago(MetodoDePago metodoDePago) {
+        return pagoRepository.findByMetodoDePago(metodoDePago);
     }
 
     public List<Pago> obtenerPagosPorEmisor(Usuario emisor) {
@@ -77,24 +77,24 @@ public class PagoService {
         return pagoRepository.findByEmisorAndReceptor(emisor, receptor);
     }
 
-    public List<Pago> obtenerPagosPorEmisorYMetodoPago(Usuario emisor, MetodoDePago metodoPago) {
-        return pagoRepository.findByEmisorAndMetodoPago(emisor, metodoPago);
+    public List<Pago> obtenerPagosPorEmisorYMetodoDePago(Usuario emisor, MetodoDePago metodoDePago) {
+        return pagoRepository.findByEmisorAndMetodoDePago(emisor, metodoDePago);
     }
 
-    public List<Pago> obtenerPagosPorReceptorYMetodoPago(Usuario receptor, MetodoDePago metodoPago) {
-        return pagoRepository.findByReceptorAndMetodoPago(receptor, metodoPago);
+    public List<Pago> obtenerPagosPorReceptorYMetodoDePago(Usuario receptor, MetodoDePago metodoDePago) {
+        return pagoRepository.findByReceptorAndMetodoDePago(receptor, metodoDePago);
     }
 
     public List<Pago> obtenerPagosPorEmisorYMonto(Usuario emisor, Double monto) {
         return pagoRepository.findByEmisorAndMonto(emisor, monto);
     }
 
-    public List<Pago> obtenerPagosPorEmisorYMontoYMetodoPago(Usuario emisor, Double monto, MetodoDePago metodoPago) {
-        return pagoRepository.findByEmisorAndMontoAndMetodoPago(emisor, monto, metodoPago);
+    public List<Pago> obtenerPagosPorEmisorYMontoYMetodoDePago(Usuario emisor, Double monto, MetodoDePago metodoDePago) {
+        return pagoRepository.findByEmisorAndMontoAndMetodoDePago(emisor, monto, metodoDePago);
     }
 
-    public List<Pago> obtenerPagosPorReceptorYMontoYMetodoPago(Usuario receptor, Double monto, MetodoDePago metodoPago) {
-        return pagoRepository.findByReceptorAndMontoAndMetodoPago(receptor, monto, metodoPago);
+    public List<Pago> obtenerPagosPorReceptorYMontoYMetodoDePago(Usuario receptor, Double monto, MetodoDePago metodoDePago) {
+        return pagoRepository.findByReceptorAndMontoAndMetodoDePago(receptor, monto, metodoDePago);
     }
 
     public List<Pago> obtenerPagosPorReceptorYMonto(Usuario receptor, Double monto) {
@@ -105,24 +105,24 @@ public class PagoService {
         return pagoRepository.findByEmisorAndReceptorAndMonto(emisor, receptor, monto);
     }
 
-    public List<Pago> obtenerPagosPorEmisorYReceptorYMetodoPago(Usuario emisor, Usuario receptor, MetodoDePago metodoPago) {
-        return pagoRepository.findByEmisorAndReceptorAndMetodoPago(emisor, receptor, metodoPago);
+    public List<Pago> obtenerPagosPorEmisorYReceptorYMetodoDePago(Usuario emisor, Usuario receptor, MetodoDePago metodoDePago) {
+        return pagoRepository.findByEmisorAndReceptorAndMetodoDePago(emisor, receptor, metodoDePago);
     }
 
-    public List<Pago> obtenerPagosPorEmisorYReceptorYMontoYMetodoPago(Usuario emisor, Usuario receptor, Double monto, MetodoDePago metodoPago) {
-        return pagoRepository.findByEmisorAndReceptorAndMontoAndMetodoPago(emisor, receptor, monto, metodoPago);
+    public List<Pago> obtenerPagosPorEmisorYReceptorYMontoYMetodoDePago(Usuario emisor, Usuario receptor, Double monto, MetodoDePago metodoDePago) {
+        return pagoRepository.findByEmisorAndReceptorAndMontoAndMetodoDePago(emisor, receptor, monto, metodoDePago);
     }
 
-    public List<Pago> obtenerPagosPorEmisorYReceptorYMetodoPagoYMonto(Usuario emisor, Usuario receptor, MetodoDePago metodoPago, Double monto) {
-        return pagoRepository.findByEmisorAndReceptorAndMetodoPagoAndMonto(emisor, receptor, metodoPago, monto);
+    public List<Pago> obtenerPagosPorEmisorYReceptorYMetodoDePagoYMonto(Usuario emisor, Usuario receptor, MetodoDePago MetodoDePago, Double monto) {
+        return pagoRepository.findByEmisorAndReceptorAndMetodoDePagoAndMonto(emisor, receptor, MetodoDePago, monto);
     }
 
-    public List<Pago> obtenerPagosPorEmisorYMetodoPagoYMonto(Usuario emisor, MetodoDePago metodoPago, Double monto) {
-        return pagoRepository.findByEmisorAndMetodoPagoAndMonto(emisor, metodoPago, monto);
+    public List<Pago> obtenerPagosPorEmisorYMetodoDePagoYMonto(Usuario emisor, MetodoDePago MetodoDePago, Double monto) {
+        return pagoRepository.findByEmisorAndMetodoDePagoAndMonto(emisor, MetodoDePago, monto);
     }
 
-    public List<Pago> obtenerPagosPorReceptorYMetodoPagoYMonto(Usuario receptor, MetodoDePago metodoPago, Double monto) {
-        return pagoRepository.findByReceptorAndMetodoPagoAndMonto(receptor, metodoPago, monto);
+    public List<Pago> obtenerPagosPorReceptorYMetodoDePagoYMonto(Usuario receptor, MetodoDePago MetodoDePago, Double monto) {
+        return pagoRepository.findByReceptorAndMetodoDePagoAndMonto(receptor, MetodoDePago, monto);
     }
 
 
@@ -134,7 +134,7 @@ public class PagoService {
                 Pago pago = new Pago();
                 pago.setEmisor(new Usuario("Emisor " + i, "emisor" + i + "@example.com", new Date(), new Random().nextInt(10000), "Dirección de ejemplo" + i + 1));
                 pago.setReceptor(new Usuario("Receptor " + i, "receptor" + i + "@example.com", new Date(), new Random().nextInt(10000), "Dirección de ejemplo" + i + 2));
-                pago.setMetodoPago(MetodoDePago.values()[new Random().nextInt(MetodoDePago.values().length)]); // Método de pago aleatorio
+                pago.setMetodoDePago(MetodoDePago.values()[new Random().nextInt(MetodoDePago.values().length)]); // Método de pago aleatorio
                 pago.setMonto((double) (100 * i)); // Monto de ejemplo
                 pagoRepository.save(pago);
 

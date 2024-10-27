@@ -1,4 +1,4 @@
-package com.demo.asistentepagos.controller;
+package com.demo.asistentepagos.controller.api;
 
 import com.demo.asistentepagos.model.Usuario;
 import com.demo.asistentepagos.service.UsuarioService;

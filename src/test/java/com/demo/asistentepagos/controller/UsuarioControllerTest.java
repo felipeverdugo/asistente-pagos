@@ -1,5 +1,6 @@
 package com.demo.asistentepagos.controller;
 
+import com.demo.asistentepagos.controller.api.UsuarioController;
 import com.demo.asistentepagos.model.Usuario;
 import com.demo.asistentepagos.service.UsuarioService;
 import org.junit.jupiter.api.BeforeEach;

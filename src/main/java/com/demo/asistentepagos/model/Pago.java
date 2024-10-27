@@ -10,7 +10,7 @@ public class Pago {
     private Long id;
 
     @Enumerated(EnumType.STRING) // Guarda el valor del enum como String en la base de datos
-    private MetodoDePago metodoPago;
+    private MetodoDePago metodoDePago;
     private Double monto;
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "emisor_id")
@@ -23,8 +23,8 @@ public class Pago {
     }
 
 
-    public Pago(MetodoDePago metodoPago, Double monto, Usuario emisor, Usuario receptor) {
-        this.metodoPago = metodoPago;
+    public Pago(MetodoDePago MetodoDePago, Double monto, Usuario emisor, Usuario receptor) {
+        this.metodoDePago = MetodoDePago;
         this.monto = monto;
         this.emisor = emisor;
         this.receptor = receptor;
@@ -42,12 +42,12 @@ public class Pago {
     }
 
 
-    public MetodoDePago getMetodoPago() {
-        return metodoPago;
+    public MetodoDePago getMetodoDePago() {
+        return metodoDePago;
     }
 
-    public void setMetodoPago(MetodoDePago metodoPago) {
-        this.metodoPago = metodoPago;
+    public void setMetodoDePago(MetodoDePago MetodoDePago) {
+        this.metodoDePago = MetodoDePago;
     }
 
 
